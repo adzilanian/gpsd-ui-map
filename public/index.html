@@ -12,7 +12,7 @@
 <body>
 <!--Header-->
 <header class="header">
-    <img src="img/db_logo.svg" alt="Deutsche Bahn Logo" width="56px" height="39px" class="logo" elementtiming="logo">
+    <img src="img/db_logo.svg" alt="Deutsche Bahn Logo" width="56px" height="39px" class="logo">
 </header>
 
 <!--Section: Contact v.1-->
@@ -70,13 +70,12 @@
 
                     </div>
 
-
                 </div>
 
                 <button id="btnVer" onclick="postYourAdd()" class="btn btn-lg btn-primary col mt-3">Verify</button>
 
                 <iframe id="frame" class="w-100 mt-3"
-                        src="http://10.200.200.42:3000/d-solo/VDHdlbvnk/railchain-advanced-view?orgId=4&refresh=10s&from=now-1h&to=now&panelId=19"></iframe>
+                        src="//10.200.200.42:3000/d-solo/VDHdlbvnk/railchain-advanced-view?orgId=4&refresh=10s&from=now-1h&to=now&panelId=19"></iframe>
 
                 <!-- The Modal PopUp Error Message -->
                 <div id="myModal" class="modal">
@@ -113,7 +112,7 @@
             <a href="mailto:db.systel.ux.standards.anfrage@deutschebahn.com" class="elm-link "
                title="Deutsche Bahn - Sample title">Kontakt</a>
             <br>
-            <p>&copy; 2021 DB Systel</p>
+            <p>&copy 2021 DB Systel</p>
         </li>
     </ul>
 </footer>
@@ -166,12 +165,6 @@
             document.getElementById("lng").innerText = gstate.lng
             document.getElementById("lat").innerText = state.lat
             document.getElementById("time").innerText = timeRound;
-
-            console.log("GPS LAT.....: ", state.lat)
-            console.log("GPS LON.....: ", state.lng)
-            console.log("GPS TIME.....: ", state.time)
-            console.log("SPEED km/h..: ", Math.round((state.speed * 3.6)))
-            console.log("-------------------")
 
             map.setCenter(gstate);
             marker.setPosition(gstate);
