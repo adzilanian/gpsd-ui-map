@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 </head>
 <body>
-
+<!--Header-->
 <header class="header">
-    <img src="images/db_logo.svg" alt="Deutsche Bahn Logo" width="56px" height="39px" class="logo" elementtiming="logo">
+    <img src="img/db_logo.svg" alt="Deutsche Bahn Logo" width="56px" height="39px" class="logo" elementtiming="logo">
 </header>
 
 <!--Section: Contact v.1-->
@@ -28,16 +28,16 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <!--Header-->
+                        <!--Header GPS DATA-->
                         <div class="form-header blue accent-1">
                             <h3>GPS DATA</h3>
                         </div>
 
                         <br>
 
-                        <!--Body-->
+                        <!--Body GPS DATA-->
                         <div class="md-form icon">
-                            <img class="icn" src="images/gauge.png" alt="">
+                            <img class="icn" src="img/gauge.png" alt="">
                             <div class="desc">
                                 <p>Speed</p>
                                 <p><span id="speed"></span>&nbsp;km/h</p>
@@ -45,7 +45,7 @@
                         </div>
                         <br>
                         <div class="md-form icon">
-                            <img class="icn" src="images/way.png" alt="">
+                            <img class="icn" src="img/way.png" alt="">
                             <div class="desc">
                                 <p>Longitude</p>
                                 <p id="lng"></p>
@@ -53,7 +53,7 @@
                         </div>
                         <br>
                         <div class="md-form icon">
-                            <img class="icn" src="images/compass.png" alt="">
+                            <img class="icn" src="img/compass.png" alt="">
                             <div class="desc">
                                 <p>Latitude</p>
                                 <p id="lat"></p>
@@ -61,7 +61,7 @@
                         </div>
                         <br>
                         <div class="md-form icon">
-                            <img class="icn" src="images/clock.png" alt="">
+                            <img class="icn" src="img/clock.png" alt="">
                             <div class="desc">
                                 <p>Time</p>
                                 <p id="time"></p>
@@ -73,61 +73,17 @@
 
                 </div>
 
-
-                <script> function postYourAdd() {
-                    console.log("API Request started")
-                    const userAction = async () => {
-                        const response = await fetch('http://localhost:5001/sendproof', {
-                            method: 'GET',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        });
-                        const myJson = await response.json(); //extract JSON from the http response
-
-                        if (myJson === true) {
-                            document.getElementById("frame").style.display = "block";
-                        } else {
-
-                            // Get the modal
-                            let modal = document.getElementById("myModal");
-
-                            // Get the <span> element that closes the modal
-                            let span = document.getElementsByClassName("close")[0];
-
-                            // When the user clicks the button, open the modal
-                                modal.style.display = "block";
-
-                            // When the user clicks on <span> (x), close the modal
-                            span.onclick = function () {
-                                modal.style.display = "none";
-                            }
-
-                            // When the user clicks anywhere outside of the modal, close it
-                            window.onclick = function (event) {
-                                if (event.target === modal) {
-                                    modal.style.display = "none";
-                                }
-                            }
-
-                        }
-                    }
-
-                    userAction();
-
-                }
-                </script>
-
                 <button id="btnVer" onclick="postYourAdd()" class="btn btn-lg btn-primary col mt-3">Verify</button>
+
                 <iframe id="frame" class="w-100 mt-3"
                         src="http://10.200.200.42:3000/d-solo/VDHdlbvnk/railchain-advanced-view?orgId=4&refresh=10s&from=now-1h&to=now&panelId=19"></iframe>
 
-                <!-- The Modal -->
+                <!-- The Modal PopUp Error Message -->
                 <div id="myModal" class="modal">
                     <!-- Modal content -->
                     <div class="modal-ctn">
                         <span class="close">&times;</span>
-                        <p>Sie haben keine Berechtigung!</p>
+                        <p>Access denied!</p>
                     </div>
 
                 </div>
@@ -150,6 +106,7 @@
 </section>
 <!--Section: Contact v.1-->
 
+<!--Footer-->
 <footer class="rea-footer" role="contentinfo">
     <ul class="cmp-metanavigation">
         <li>
@@ -160,6 +117,8 @@
         </li>
     </ul>
 </footer>
+
+<!--GPS DATA & Google Map-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -173,6 +132,7 @@
 <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/script.js"></script>
 
 <script type="application/javascript">
 
@@ -207,14 +167,12 @@
             document.getElementById("lat").innerText = state.lat
             document.getElementById("time").innerText = timeRound;
 
-            //var path = getErrorEllipse(1, 1);
             console.log("GPS LAT.....: ", state.lat)
             console.log("GPS LON.....: ", state.lng)
             console.log("GPS TIME.....: ", state.time)
             console.log("SPEED km/h..: ", Math.round((state.speed * 3.6)))
             console.log("-------------------")
 
-            //ellipse.setPaths(path);
             map.setCenter(gstate);
             marker.setPosition(gstate);
         });

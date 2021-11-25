@@ -1,4 +1,4 @@
 # gpsd-ui-map
-Share your Location on Google Maps UI with GPSD Service
+Share Location of Train on Google Maps UI with GPSD Service
 
-![plot](./public/images/screen.png)
+![plot](public/img/screen.png)
