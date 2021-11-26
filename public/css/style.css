@@ -1,27 +1,28 @@
-body{
+body {
     background-color: #f8f9fa !important;
 }
 
-.map-container-6{
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
-}
-.map-container-6 iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
+.map-container-6 {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
 }
 
-p{
+.map-container-6 iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+p {
     margin: 0;
     display: inline;
 }
 
-.icn{
+.icn {
     margin: 0;
     display: inline;
     height: 30px;
@@ -81,6 +82,7 @@ p .ich {
         display: block;
         text-align: left;
     }
+
     .header-right {
         float: none;
     }
@@ -128,9 +130,9 @@ footer {
     grid-template-rows: 1fr;
 }
 
-#frame{
+#frame {
     display: none;
-    background:#ffffff;
+    background: #ffffff;
     height: 400px;
 
 }
@@ -179,13 +181,21 @@ footer {
 
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* The Modal (background) */
@@ -197,8 +207,8 @@ footer {
     left: 50px;
     top: 0;
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
