@@ -8,7 +8,7 @@ async function postYourAdd() {
     const myJson = await response.json(); //extract JSON from the http response
 
     if (myJson === true) {
-        document.getElementById("frame").style.display = "block";
+            document.getElementById("frame").style.display = "block";
     } else {
 
         // Get the modal
