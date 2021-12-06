@@ -1,5 +1,5 @@
 async function postYourAdd() {
-    const response = await fetch('http://49.12.230.18:5001/sendproof', {
+    const response = await fetch('https://railchain-dashboard-api.beta.de.com/', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
