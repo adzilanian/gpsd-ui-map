@@ -1,5 +1,5 @@
 async function postYourAdd() {
-    const response = await fetch('http://localhost:5001/sendproof', {
+    const response = await fetch('http://49.12.230.18:5001/sendproof', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
